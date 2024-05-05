@@ -10,7 +10,7 @@ export const AppRoutes: Routes = [
     {
         path: 'player',
         loadChildren: () => import('./pages/player/player.module').then(x => x.PlayerModule),
-        canActivate: [authenticationGuard]
+        canMatch: [authenticationGuard]
     },
     {
         path: 'login',
