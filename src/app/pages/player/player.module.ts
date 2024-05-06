@@ -7,6 +7,9 @@ import { LeftPanelComponent } from 'src/app/components/left-panel/left-panel.com
 import { MenuButtonComponent } from 'src/app/components/menu-button/menu-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserFooterComponent } from 'src/app/components/user-footer/user-footer.component';
+import { HomeComponent } from '../home/home.component';
+import { TopArtistComponent } from 'src/app/components/top-artist/top-artist.component';
+import { RightPanelComponent } from 'src/app/components/right-panel/right-panel.component';
 
 
 
@@ -15,7 +18,10 @@ import { UserFooterComponent } from 'src/app/components/user-footer/user-footer.
     PlayerComponent,
     LeftPanelComponent,
     MenuButtonComponent,
-    UserFooterComponent
+    UserFooterComponent,
+    HomeComponent,
+    TopArtistComponent,
+    RightPanelComponent
   ],
   imports: [
     CommonModule,

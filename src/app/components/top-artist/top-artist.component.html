@@ -1,0 +1,11 @@
+<div class="card p-20">
+    <div class="artist flex">
+        <span class="title-bg">
+            {{ topArtist ? topArtist.name : defaultArtist.name }}
+        </span>
+    </div>
+    <div class="image"
+        [style.background-image]="topArtist ? 'url(' + topArtist.imageUrl + ')' : 'url(' + defaultArtist.imageUrl + ')'"
+    >
+    </div>
+</div>
