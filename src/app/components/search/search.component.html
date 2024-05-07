@@ -1,0 +1,14 @@
+<input 
+    type="text"
+    placeholder="Musics, Artists, Playlists" 
+    [(ngModel)]="searchField"
+    (keyup.Enter)="search()"
+>
+<div class="suggest flex">
+    <span 
+        *ngFor="let search of currentSearch"
+        (click)="defineSearchField(search)"
+    >
+        {{ search }}
+    </span>
+</div>

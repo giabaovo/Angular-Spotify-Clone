@@ -83,6 +83,13 @@ export class SpotifyService {
     return SetSpotifyArtistToSingleIArtist(artist)
   }
 
+  async getFollowedArtists(limit: number): Promise<IArtist[]> {
+    const artists = await this.spotifyApi.getFollowedArtists({ limit })
+    console.log(artists);
+    
+    return artists.artists.items.map(a => SetSpotifyArtistToSingleIArtist(a))
+  }
+
   async getSaveTrackMusic(offset = 0, limit = 50): Promise<IMusic[]> {
     const songs = await this.spotifyApi.getMySavedTracks({ offset, limit })
     return songs.items.map(s => SetSpotifyTrackToIMusic(s.track))
@@ -96,6 +103,14 @@ export class SpotifyService {
   async getSpotifyCurrentSong(): Promise<IMusic> {
     const spotifySong = await this.spotifyApi.getMyCurrentPlayingTrack()
     return SetSpotifyTrackToIMusic(spotifySong.item)
+  }
+
+  async previousSong() {
+    await this.spotifyApi.skipToPrevious()
+  }
+
+  async nextSong() {
+    await this.spotifyApi.skipToNext()
   }
 
   logout() {
