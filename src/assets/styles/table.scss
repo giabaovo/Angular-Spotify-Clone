@@ -11,6 +11,16 @@
         font-size: .5rem;
     }
 
+    .running {
+        background-color: $white;
+        padding: 10px;
+        box-shadow: 0px 0px 15px $black-transparent-30;
+
+        td {
+            color: $primary-color;
+        }
+    }
+
     thead th {
         font-size: .75rem;
         font-weight: 600;

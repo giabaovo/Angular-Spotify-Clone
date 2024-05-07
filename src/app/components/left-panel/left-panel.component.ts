@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { IPlaylist } from 'src/app/interfaces/IPlaylist';
 import { SpotifyService } from 'src/app/services/Spotify.service';
@@ -8,12 +8,14 @@ import { SpotifyService } from 'src/app/services/Spotify.service';
   templateUrl: './left-panel.component.html',
   styleUrls: ['./left-panel.component.scss']
 })
-export class LeftPanelComponent {
+export class LeftPanelComponent implements OnInit {
 
   menuName: string = 'Home'
   playlists: IPlaylist[] = []
 
-  constructor(private spotifyService: SpotifyService) {
+  constructor(private spotifyService: SpotifyService) { }
+
+  ngOnInit(): void {
     this.getPlaylists()
   }
 

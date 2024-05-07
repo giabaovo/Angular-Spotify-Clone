@@ -20,7 +20,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let song of songs" (click)="playSong(song)">
+            <tr 
+                *ngFor="let song of songs" 
+                (click)="playSong(song)"
+                [class.running] = 'song.id === currentSong.id'
+            >
                 <td>
                     <fa-icon class="play" [icon]="playIcon"></fa-icon>
                 </td>

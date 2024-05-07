@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { newArtist } from 'src/app/Common/factories';
 import { IArtist } from 'src/app/interfaces/IArtist';
 import { SpotifyService } from 'src/app/services/Spotify.service';
@@ -8,12 +8,14 @@ import { SpotifyService } from 'src/app/services/Spotify.service';
   templateUrl: './top-artist.component.html',
   styleUrls: ['./top-artist.component.scss']
 })
-export class TopArtistComponent {
+export class TopArtistComponent implements OnInit {
 
   topArtist: IArtist = newArtist()
   defaultArtist: IArtist = newArtist()
 
-  constructor(private spotifyService: SpotifyService) {
+  constructor(private spotifyService: SpotifyService) { }
+
+  ngOnInit(): void {
     this.getTopArtist()
     this.getDefaultArtist()
   }
